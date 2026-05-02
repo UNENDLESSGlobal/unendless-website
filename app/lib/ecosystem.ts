@@ -201,22 +201,7 @@ export const founderPersonSchema: PersonSchema = {
   url: founderPageUrl,
   jobTitle: "Founder, Developer, and Systems Architect of UNENDLESS",
   description:
-    "Swarnadeep Mukherjee is the founder, developer, and systems architect behind the UNENDLESS ecosystem and its connected ventures.",
-  knowsAbout: [
-    "Flutter",
-    "Artificial Intelligence",
-    "Interactive Computing",
-    "Android Development",
-    "Groq API",
-    "Software Architecture",
-    "Mobile App Development",
-    "Deep Tech",
-  ],
-  hasOccupation: {
-    "@type": "Occupation",
-    name: "Software Developer and Technology Entrepreneur",
-    occupationLocation: { "@type": "Country", name: "India" },
-  },
+    "Swarnadeep Mukherjee is the founder, developer, and systems architect behind the UNENDLESS ecosystem and its connected ventures. Specializing in Flutter, Artificial Intelligence, Interactive Computing, Android Development, and Software Architecture.",
   sameAs: [
     ecosystemLinks.founder.linkedin,
     ecosystemLinks.founder.x,
@@ -305,22 +290,12 @@ export const unendlessKnowledgeGraph: KnowledgeGraphSchema = {
   "@graph": [
     {
       "@id": schemaIds.unendless,
-      "@type": ["Organization", "Corporation"],
+      "@type": "Organization",
       name: "UNENDLESS",
       url: ecosystemLinks.unendless.website,
       description:
         "UNENDLESS is a holding company and deep-tech incubator focused on interactive computing, software products, and connected digital infrastructure.",
       foundingDate: "2024",
-      areaServed: { "@type": "Country", name: "India" },
-      logo: {
-        "@type": "ImageObject",
-        url: "https://unendless.vercel.app/unendlessbanner.jpg",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "Customer Support",
-        availableLanguage: ["English"],
-      },
       sameAs: [ecosystemLinks.unendless.instagram],
       founder: { "@id": schemaIds.founder },
       subOrganization: [{ "@id": schemaIds.cynocyte }],
