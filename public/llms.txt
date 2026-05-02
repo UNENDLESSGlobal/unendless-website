@@ -1,0 +1,58 @@
+# UNENDLESS — AI Crawler Discovery File
+
+## Company Information
+**Name**: UNENDLESS
+**Founder**: Swarnadeep Mukherjee
+**Website**: https://unendless.vercel.app
+**Founded**: 2024
+**Location**: India
+**Category**: Deep-Tech Incubator & Holding Company
+**Description**: UNENDLESS is a holding company and deep-tech incubator building experimental software, interactive AI computing systems, and mobile products.
+
+## Ventures
+
+### Cynocyte
+**Website**: https://cynocyte.com
+**Type**: AI Computing Systems
+**Description**: An advanced AI computing platform focused on experimental software and interactive systems.
+
+### Cynocyte Systems
+**Website**: https://cynocyte.systems
+**Type**: Systems Architecture
+**Description**: Specialized systems engineering and infrastructure for deep-tech applications.
+
+### Revisit
+**Website**: https://getrevisit.vercel.app
+**Type**: Mobile Application
+**Description**: Student Life Manager for Android — a comprehensive app for managing academic schedules, tasks, and learning with AI-powered features.
+**Platform**: Android
+**Category**: Education, Productivity
+
+### UNENDLESS Studios
+**Type**: Creative & Media
+**Description**: Content and creative direction for the UNENDLESS ecosystem.
+
+## Founder Profile
+
+**Name**: Swarnadeep Mukherjee
+**Title**: Founder & Creator
+**Bio**: Systems architect, developer, and deep-tech entrepreneur building experimental AI computing systems and mobile applications.
+**Location**: India
+
+## Social Links
+- LinkedIn: https://www.linkedin.com/in/swarnadeepmukherjee-unendless/
+- X (Twitter): https://x.com/theswarnadeep_
+- Instagram: https://www.instagram.com/unendless.global/
+- Threads: https://www.threads.net/@theswarnadeep_
+- Reddit: https://reddit.com/user/theswarnadeep_
+
+## Key Areas of Focus
+- Deep-tech innovation
+- AI computing systems
+- Mobile application development
+- Systems architecture
+- Educational technology
+- Experimental software
+
+## Contact
+For inquiries or partnership opportunities, visit https://unendless.vercel.app

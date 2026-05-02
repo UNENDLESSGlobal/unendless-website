@@ -6,10 +6,10 @@ import "./globals.css";
 import {
   ecosystemLinks,
   ogImagePath,
-  siteDescription,
   siteKeywords,
   siteUrl,
   unendlessKnowledgeGraph,
+  websiteSchema,
 } from "./lib/ecosystem";
 
 export const metadata: Metadata = {
@@ -18,8 +18,12 @@ export const metadata: Metadata = {
     default: "UNENDLESS | Deep-Tech Incubator & Holding Company",
     template: "%s | UNENDLESS",
   },
-  description: siteDescription,
-  applicationName: "UNENDLESS",
+  description:
+    "UNENDLESS — founded by Swarnadeep Mukherjee — is a holding company and deep-tech incubator building experimental software, interactive AI computing systems, and mobile products including Cynocyte and Revisit, based in India.",
+  applicationName: "UNENDLESS — Built by Swarnadeep Mukherjee",
+  alternates: {
+    canonical: siteUrl,
+  },
   authors: [
     {
       name: "Swarnadeep Mukherjee",
@@ -32,9 +36,13 @@ export const metadata: Metadata = {
   keywords: siteKeywords,
   category: "Technology",
   classification: "Technology, Artificial Intelligence",
+  verification: {
+    google: "e658be14549c1578",
+  },
   openGraph: {
     title: "UNENDLESS | Deep-Tech Incubator & Holding Company",
-    description: siteDescription,
+    description:
+      "UNENDLESS — founded by Swarnadeep Mukherjee — is a holding company and deep-tech incubator building experimental software, interactive AI computing systems, and mobile products including Cynocyte and Revisit, based in India.",
     url: siteUrl,
     siteName: "UNENDLESS",
     type: "website",
@@ -51,7 +59,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "UNENDLESS | Deep-Tech Incubator & Holding Company",
-    description: siteDescription,
+    description:
+      "UNENDLESS — founded by Swarnadeep Mukherjee — is a holding company and deep-tech incubator building experimental software, interactive AI computing systems, and mobile products including Cynocyte and Revisit, based in India.",
     creator: "@theswarnadeep_",
     images: [ogImagePath],
   },
@@ -76,6 +85,18 @@ export const metadata: Metadata = {
   other: {
     "geo.placename": "India",
     "geo.region": "IN",
+    "og:see_also": [
+      "https://www.linkedin.com/in/swarnadeepmukherjee-unendless/",
+      "https://x.com/theswarnadeep_",
+      "https://www.instagram.com/unendless.global/",
+    ],
+    abstract:
+      "UNENDLESS is a holding company and deep-tech incubator founded by Swarnadeep Mukherjee. The ecosystem includes Cynocyte for AI and interactive computing, Cynocyte Systems for infrastructure, and Revisit, a student life manager for Android.",
+    subject:
+      "Deep Tech, Artificial Intelligence, Interactive Computing, Software Products, India Technology",
+    language: "English",
+    "revisit-after": "7 days",
+    author: "Swarnadeep Mukherjee",
   },
 };
 
@@ -85,7 +106,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="antialiased bg-black text-white" style={{ backgroundColor: '#000000' }}>
+    <html lang="en" prefix='og: https://ogp.me/ns# profile: https://ogp.me/ns/profile#' className="antialiased bg-black text-white" style={{ backgroundColor: '#000000' }}>
       <body className="min-h-screen overflow-x-hidden bg-black text-white" style={{ backgroundColor: '#000000' }}>
         {/* Google Analytics */}
         <Script
@@ -107,6 +128,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(unendlessKnowledgeGraph),
+          }}
+        />
+
+        <script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
           }}
         />
 
@@ -305,6 +334,9 @@ export default function RootLayout({
               </p>
               <p className="text-xs text-[var(--text-muted)]">
                 Founded by SWARNADEEP MUKHERJEE.
+              </p>
+              <p className="text-xs text-[var(--text-dim)] mt-2">
+                UNENDLESS and its ventures — Cynocyte, Cynocyte Systems, and Revisit — are built and maintained by <a href="/founder" className="underline hover:text-[var(--text-muted)] transition-colors">Swarnadeep Mukherjee</a>.
               </p>
             </div>
 

@@ -91,7 +91,7 @@ export const ecosystemLinks = {
   founder: {
     instagram: "https://www.instagram.com/theswarnadeep_/",
     linkedin:
-      "https://www.linkedin.com/in/swarnadeepmukherjee-unendless?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "https://www.linkedin.com/in/swarnadeepmukherjee-unendless/",
     reddit: "https://www.reddit.com/user/SwarnadeepMukherjee/",
     threads: "https://www.threads.net/@theswarnadeep_",
     x: "https://x.com/theswarnadeep_",
@@ -167,15 +167,23 @@ export const footerDirectory: DirectorySection[] = [
 
 export const siteKeywords = [
   "UNENDLESS",
-  "deep-tech incubator",
-  "holding company",
+  "Swarnadeep Mukherjee",
+  "deep-tech incubator India",
+  "holding company India",
   "interactive computing",
-  "artificial intelligence",
+  "artificial intelligence India",
   "Cynocyte",
   "Cynocyte Systems",
-  "Revisit",
-  "Swarnadeep Mukherjee",
-  "India technology ecosystem",
+  "Revisit app",
+  "student life manager Android",
+  "Flutter developer India",
+  "indie developer India",
+  "browser-based AI",
+  "experimental software India",
+  "founder-led tech company India",
+  "Swarnadeep Mukherjee UNENDLESS",
+  "Swarnadeep Mukherjee Cynocyte",
+  "Revisit student app Android India",
 ];
 
 const schemaIds = {
@@ -191,9 +199,25 @@ export const founderPersonSchema: PersonSchema = {
   "@type": "Person",
   name: "Swarnadeep Mukherjee",
   url: founderPageUrl,
-  jobTitle: "Founder, Developer, and Architect of the UNENDLESS ecosystem",
+  jobTitle: "Founder, Developer, and Systems Architect of UNENDLESS",
   description:
     "Swarnadeep Mukherjee is the founder, developer, and systems architect behind the UNENDLESS ecosystem and its connected ventures.",
+  nationality: { "@type": "Country", name: "India" },
+  knowsAbout: [
+    "Flutter",
+    "Artificial Intelligence",
+    "Interactive Computing",
+    "Android Development",
+    "Groq API",
+    "Software Architecture",
+    "Mobile App Development",
+    "Deep Tech",
+  ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Software Developer and Technology Entrepreneur",
+    occupationLocation: { "@type": "Country", name: "India" },
+  },
   sameAs: [
     ecosystemLinks.founder.linkedin,
     ecosystemLinks.founder.x,
@@ -265,17 +289,39 @@ const revisitSchema: SoftwareApplicationSchema = {
   ],
 };
 
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://unendless.vercel.app/#website",
+  url: siteUrl,
+  name: "UNENDLESS",
+  description:
+    "UNENDLESS is a holding company and deep-tech incubator founded by Swarnadeep Mukherjee, building interactive computing, AI platforms, and software products from India.",
+  publisher: { "@id": schemaIds.unendless },
+  inLanguage: "en-US",
+};
+
 export const unendlessKnowledgeGraph: KnowledgeGraphSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@id": schemaIds.unendless,
-      "@type": "Organization",
+      "@type": ["Organization", "Corporation"],
       name: "UNENDLESS",
       url: ecosystemLinks.unendless.website,
       description:
         "UNENDLESS is a holding company and deep-tech incubator focused on interactive computing, software products, and connected digital infrastructure.",
       foundingDate: "2024",
+      areaServed: { "@type": "Country", name: "India" },
+      logo: {
+        "@type": "ImageObject",
+        url: "https://unendless.vercel.app/unendlessbanner.jpg",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Customer Support",
+        availableLanguage: ["English"],
+      },
       sameAs: [ecosystemLinks.unendless.instagram],
       founder: { "@id": schemaIds.founder },
       subOrganization: [{ "@id": schemaIds.cynocyte }],

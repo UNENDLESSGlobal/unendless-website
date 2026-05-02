@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import ScrollReveal from "./components/ScrollReveal";
 import {
   ecosystemLinks,
+  founderSocialLinks,
   ogImagePath,
   siteDescription,
+  siteKeywords,
   siteUrl,
 } from "./lib/ecosystem";
 
@@ -24,8 +27,9 @@ const ecosystemCards = [
   {
     title: "Revisit",
     description: "Student life manager for Android. Organizing routines and academic planning.",
-    href: "https://getrevisit.vercel.app",
-    action: "Visit Website ↗",
+    href: "/revisit",
+    action: "Learn More ↗",
+    isInternal: true,
   },
   {
     title: "UNENDLESS Studios",
@@ -37,15 +41,16 @@ const ecosystemCards = [
 
 export const metadata: Metadata = {
   title: {
-    absolute: "UNENDLESS | Deep-Tech Incubator & Holding Company",
+    absolute: "Swarnadeep Mukherjee's UNENDLESS — Deep-Tech Incubator & Holding Company",
   },
-  description: siteDescription,
+  description: "UNENDLESS, founded by Swarnadeep Mukherjee, is a deep-tech incubator and holding company building interactive AI computing, Cynocyte, and the Revisit Android app. Based in India.",
+  keywords: siteKeywords,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "UNENDLESS | Deep-Tech Incubator & Holding Company",
-    description: siteDescription,
+    description: "UNENDLESS, founded by Swarnadeep Mukherjee, is a deep-tech incubator and holding company building interactive AI computing, Cynocyte, and the Revisit Android app. Based in India.",
     url: siteUrl,
     images: [
       {
@@ -59,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "UNENDLESS | Deep-Tech Incubator & Holding Company",
-    description: siteDescription,
+    description: "UNENDLESS, founded by Swarnadeep Mukherjee, is a deep-tech incubator and holding company building interactive AI computing, Cynocyte, and the Revisit Android app. Based in India.",
     images: [ogImagePath],
   },
 };
@@ -88,15 +93,17 @@ export default function Home() {
             <path d="M12 5v14M19 12l-7 7-7-7" />
           </svg>
         </div>
-
-        {/* Hidden SEO content */}
-        <h1 className="sr-only">
-          UNENDLESS — Deep-Tech Incubator and Holding Company. A founder-led
-          holding structure for ventures in interactive computing, artificial
-          intelligence, software products, and connected digital
-          infrastructure. Founded by Swarnadeep Mukherjee.
-        </h1>
       </section>
+
+      {/* ── Visible Title Section ── */}
+      <ScrollReveal className="w-full px-6 py-16 text-center sm:py-20 lg:py-24">
+        <h1 className="display-title text-gradient text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+          UNENDLESS
+        </h1>
+        <p className="mt-4 text-lg sm:text-xl text-[var(--text-secondary)]">
+          Founded by Swarnadeep Mukherjee · Deep-Tech Incubator · Holding Company
+        </p>
+      </ScrollReveal>
 
       {/* ── Intro Text ── */}
       <ScrollReveal className="w-full px-6 py-24 text-center">
@@ -104,6 +111,21 @@ export default function Home() {
           Shaping what comes next. A global holding company and<br className="hidden sm:block" />
           venture incubator.
         </p>
+      </ScrollReveal>
+
+      {/* ── Who We Are Section ── */}
+      <ScrollReveal delay={100} className="w-full px-6 py-16 text-center sm:py-20">
+        <div className="mx-auto max-w-2xl">
+          <p className="mb-8 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)]">
+            WHO WE ARE
+          </p>
+          <p className="text-base sm:text-lg leading-relaxed text-[var(--text-secondary)] mb-6">
+            UNENDLESS is a founder-led holding company and deep-tech incubator based in India, building at the intersection of interactive computing and artificial intelligence. Founded by Swarnadeep Mukherjee, the ecosystem spans Cynocyte — an experimental AI and browser-based computing platform — Cynocyte Systems for infrastructure engineering, and Revisit, a student life manager for Android.
+          </p>
+          <p className="text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">
+            Our approach mirrors the structure of conglomerates like Alphabet: a parent company that incubates and holds distinct ventures, each with its own identity and mission, unified by a shared founder vision.
+          </p>
+        </div>
       </ScrollReveal>
 
       {/* ── Ecosystem Links ── */}
@@ -122,6 +144,7 @@ export default function Home() {
               {ecosystemCards.map((card, index) => {
                 const hasLink = "href" in card && card.href;
                 const isRestricted = "isRestricted" in card && card.isRestricted;
+                const isInternal = "isInternal" in card && card.isInternal;
 
                 const inner = (
                   <div className="flex h-full flex-col p-6">
@@ -150,6 +173,17 @@ export default function Home() {
                 const cardClasses = `flex h-full flex-col rounded-2xl border border-white/10 bg-[#050505] transition-colors duration-300 hover:bg-[#0a0a0a]`;
 
                 if (hasLink) {
+                  if (isInternal) {
+                    return (
+                      <Link
+                        key={card.title}
+                        href={card.href}
+                        className={cardClasses}
+                      >
+                        {inner}
+                      </Link>
+                    );
+                  }
                   return (
                     <a
                       key={card.title}
@@ -180,8 +214,54 @@ export default function Home() {
               Cynocyte Systems infrastructure engineering Revisit student life
               manager Android Unendless Studios India technology startup
               ecosystem parent company subsidiary software products digital
-              infrastructure
+              infrastructure Swarnadeep Mukherjee founder UNENDLESS Cynocyte India
+              interactive computing AI Flutter Android developer Revisit student app
             </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ── Founder Card Section ── */}
+      <ScrollReveal delay={400} className="w-full px-6 py-20 sm:py-24">
+        <section className="mx-auto max-w-2xl">
+          <p className="mb-12 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent-mint)] text-center">
+            FOUNDED BY
+          </p>
+          
+          <div className="glass-panel rounded-2xl p-8 sm:p-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">
+              Swarnadeep Mukherjee
+            </h2>
+            <p className="mt-2 text-lg text-[var(--text-muted)]">
+              Founder · Developer · Systems Architect
+            </p>
+            
+            <p className="mt-6 text-base leading-relaxed text-[var(--text-secondary)]">
+              Building interactive computing systems, AI platforms, and mobile software from India.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {founderSocialLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pill-link"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-8">
+              <Link
+                href="/founder"
+                className="button-primary inline-flex"
+              >
+                Full Profile →
+              </Link>
+            </div>
           </div>
         </section>
       </ScrollReveal>
