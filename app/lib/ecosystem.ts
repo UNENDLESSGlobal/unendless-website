@@ -202,7 +202,6 @@ export const founderPersonSchema: PersonSchema = {
   jobTitle: "Founder, Developer, and Systems Architect of UNENDLESS",
   description:
     "Swarnadeep Mukherjee is the founder, developer, and systems architect behind the UNENDLESS ecosystem and its connected ventures.",
-  nationality: { "@type": "Country", name: "India" },
   knowsAbout: [
     "Flutter",
     "Artificial Intelligence",
