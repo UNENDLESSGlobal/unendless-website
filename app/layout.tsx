@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import "./globals.css";
 import {
   ecosystemLinks,
@@ -86,6 +87,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased bg-black text-white" style={{ backgroundColor: '#000000' }}>
       <body className="min-h-screen overflow-x-hidden bg-black text-white" style={{ backgroundColor: '#000000' }}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-B4ZW3RG3DE"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-B4ZW3RG3DE');
+          `}
+        </Script>
+
         <script
           id="unendless-knowledge-graph"
           type="application/ld+json"
